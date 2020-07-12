@@ -41,7 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\TanimTip.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\Base\EntityBase.cs" />
+    <Compile Include="Tables\EkMalzeme.cs" />
+    <Compile Include="Tables\Porsiyon.cs" />
+    <Compile Include="Tables\Tanim.cs" />
+    <Compile Include="Tables\Urun.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
