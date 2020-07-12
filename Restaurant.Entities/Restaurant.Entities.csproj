@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\TanimTip.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tables\Base\EntityBase.cs" />
     <Compile Include="Tables\EkMalzeme.cs" />

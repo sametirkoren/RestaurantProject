@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Mapping\EkMalzemeMap.cs" />
     <Compile Include="Mapping\PorsiyonMap.cs" />
     <Compile Include="Mapping\TanimMap.cs" />

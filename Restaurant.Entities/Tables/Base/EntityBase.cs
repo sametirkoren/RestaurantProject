@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant.Entities.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Entities.Tables.Base
 {
-    public class EntityBase
+    public class EntityBase : IEntity
     {
         public Guid Id{ get; set; }
 
