@@ -51,7 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Dals\Base\Repository.cs" />
+    <Compile Include="Interfaces\Base\IRepository.cs" />
+    <Compile Include="Interfaces\IEkMalzemeDal.cs" />
+    <Compile Include="Interfaces\IPorsiyonDal.cs" />
+    <Compile Include="Interfaces\ITanimDal.cs" />
+    <Compile Include="Interfaces\IUrunDal.cs" />
     <Compile Include="Mapping\EkMalzemeMap.cs" />
     <Compile Include="Mapping\PorsiyonMap.cs" />
     <Compile Include="Mapping\TanimMap.cs" />

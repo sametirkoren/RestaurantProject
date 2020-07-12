@@ -7,16 +7,16 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Restaurant.DataAccess.Interfaces
+namespace Restaurant.DataAccess.Interfaces.Base
 {
-    public interface IRepository<TEntity> where TEntity : class , IEntity , new()
+    public interface IRepository<TEntity> : IDisposable where TEntity : class , IEntity , new()
     {
         void Add(TEntity entity);
         void Add(IEnumerable<TEntity> entities);
 
         void AddOrUpdate(TEntity entity);
 
-        void AddOrUpdate(IEnumerable<TEntity> entity);
+        void AddOrUpdate(IEnumerable<TEntity> entities);
 
 
         void Update(TEntity entity);
