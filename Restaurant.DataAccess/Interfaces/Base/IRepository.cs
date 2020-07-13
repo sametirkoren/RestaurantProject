@@ -34,13 +34,13 @@ namespace Restaurant.DataAccess.Interfaces.Base
 
         bool Exist(Expression<Func<TEntity, bool>> filter);
 
-        IEnumerable<TEntity> GetList(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, object>>[] includes);
+        IEnumerable<TEntity> GetList(Expression<Func<TEntity, bool>> filter,params Expression<Func<TEntity, object>>[] includes);
 
-        IQueryable<TEntity> Select(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TEntity>> selector, Expression<Func<TEntity, object>>[] includes);
-        IQueryable<TResult> Select<TResult>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TResult>> selector, Expression<Func<TEntity, object>>[] includes);
+        IQueryable<TEntity> Select(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TEntity>> selector, params Expression<Func<TEntity, object>>[] includes);
+        IQueryable<TResult> Select<TResult>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TResult>> selector, params Expression<Func<TEntity, object>>[] includes);
 
 
-        void Load(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, object>>[] includes);
+        void Load(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes);
 
         bool HasChanges();
 

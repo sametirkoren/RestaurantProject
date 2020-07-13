@@ -1,4 +1,5 @@
-﻿using Restaurant.DataAccess.Interfaces.Base;
+﻿using Restaurant.Core.Extensions;
+using Restaurant.DataAccess.Interfaces.Base;
 using Restaurant.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+
 using System.Threading.Tasks;
 
 namespace Restaurant.DataAccess.Dals.Base
@@ -79,12 +81,12 @@ namespace Restaurant.DataAccess.Dals.Base
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
         {
-            return _context.Set<TEntity>().SingleOrDefault(filter);
+            return _context.Set<TEntity>().MultipleInclude(includes).SingleOrDefault(filter);
         }
 
-        public IEnumerable<TEntity> GetList(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, object>>[] includes)
+        public IEnumerable<TEntity> GetList(Expression<Func<TEntity, bool>> filter,  params Expression<Func<TEntity, object>>[] includes)
         {
-            return filter == null ? _context.Set<TEntity>().AsNoTracking().ToList() : _context.Set<TEntity>().Where(filter).AsNoTracking().ToList();
+            return filter == null ? _context.Set<TEntity>().MultipleInclude(includes).AsNoTracking().ToList() : _context.Set<TEntity>().MultipleInclude(includes).Where(filter).AsNoTracking().ToList();
         }
 
         public bool HasChanges()
@@ -92,7 +94,7 @@ namespace Restaurant.DataAccess.Dals.Base
             return _context.ChangeTracker.Entries<TEntity>().Any();
         }
 
-        public void Load(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, object>>[] includes)
+        public void Load(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
         {
             if(filter == null)
             {
@@ -104,14 +106,14 @@ namespace Restaurant.DataAccess.Dals.Base
             }
         }
 
-        public IQueryable<TEntity> Select(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TEntity>> selector, Expression<Func<TEntity, object>>[] includes)
+        public IQueryable<TEntity> Select(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TEntity>> selector, params Expression<Func<TEntity, object>>[] includes)
         {
-            return filter == null ? _context.Set<TEntity>().Select(selector) : _context.Set<TEntity>().Where(filter).Select(selector);
+            return filter == null ? _context.Set<TEntity>().MultipleInclude(includes).Select(selector) : _context.Set<TEntity>().MultipleInclude(includes).Where(filter).Select(selector);
         }
 
-        public IQueryable<TResult> Select<TResult>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TResult>> selector, Expression<Func<TEntity, object>>[] includes)
+        public IQueryable<TResult> Select<TResult>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TResult>> selector, params Expression<Func<TEntity, object>>[] includes)
         {
-            return filter == null ? _context.Set<TEntity>().Select(selector) : _context.Set<TEntity>().Where(filter).Select(selector);
+            return filter == null ? _context.Set<TEntity>().MultipleInclude(includes).Select(selector) : _context.Set<TEntity>().MultipleInclude(includes).Where(filter).Select(selector);
         }
 
         public void Update(TEntity entity)

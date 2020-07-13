@@ -51,7 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexts\BaseContext.cs" />
     <Compile Include="Dals\Base\Repository.cs" />
+    <Compile Include="Dals\EkMalzemeDal.cs" />
+    <Compile Include="Dals\PorsiyonDal.cs" />
+    <Compile Include="Dals\TanimDal.cs" />
+    <Compile Include="Dals\UrunDal.cs" />
     <Compile Include="Interfaces\Base\IRepository.cs" />
     <Compile Include="Interfaces\IEkMalzemeDal.cs" />
     <Compile Include="Interfaces\IPorsiyonDal.cs" />
@@ -68,6 +73,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Restaurant.Core\Restaurant.Core.csproj">
+      <Project>{aedb2432-43b6-4633-b339-de176374962d}</Project>
+      <Name>Restaurant.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Restaurant.Entities\Restaurant.Entities.csproj">
       <Project>{E77CFD5C-E311-497E-AB4B-E53E9E852023}</Project>
       <Name>Restaurant.Entities</Name>
