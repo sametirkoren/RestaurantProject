@@ -59,6 +59,7 @@
     <Compile Include="Dals\PorsiyonDal.cs" />
     <Compile Include="Dals\TanimDal.cs" />
     <Compile Include="Dals\UrunDal.cs" />
+    <Compile Include="Functions\EntityBaseInfo.cs" />
     <Compile Include="Interfaces\Base\IRepository.cs" />
     <Compile Include="Interfaces\IEkMalzemeDal.cs" />
     <Compile Include="Interfaces\IPorsiyonDal.cs" />
@@ -69,6 +70,8 @@
     <Compile Include="Mapping\TanimMap.cs" />
     <Compile Include="Mapping\UrunMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\RestaurantUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

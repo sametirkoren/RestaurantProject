@@ -16,7 +16,7 @@ namespace Restaurant.Entities.Tables.Base
 
         public string Duzenleyen { get; set; }
 
-        public DateTime DuzenlenmeTarihi { get; set; }
+        public DateTime? DuzenlenmeTarihi { get; set; }
 
         public string Aciklama { get; set; }
     }
