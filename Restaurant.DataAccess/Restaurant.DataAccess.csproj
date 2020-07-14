@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\BaseContext.cs" />
+    <Compile Include="Contexts\Restaurant\RestaruantConfiguration.cs" />
+    <Compile Include="Contexts\Restaurant\RestaurantContext.cs" />
     <Compile Include="Dals\Base\Repository.cs" />
     <Compile Include="Dals\EkMalzemeDal.cs" />
     <Compile Include="Dals\PorsiyonDal.cs" />
